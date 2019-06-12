@@ -1,4 +1,4 @@
-# [link to my modules](https://s-v-e-t.github.io/my-js-repo/)
+# [link to my modules](https://s-v-e-t.github.io/my-js-repo/index.html)
 
 
 Практические задания:
