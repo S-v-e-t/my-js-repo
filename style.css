@@ -1,0 +1,19 @@
+.menu {
+  color: rgb(36, 119, 80);
+  }
+
+
+.link {
+  cursor: pointer;
+
+  text-transform: uppercase;
+  color: rgb(60, 204, 137);
+  text-decoration: none;
+  
+}
+
+.menu-item {
+    list-style: none;
+}
+
+

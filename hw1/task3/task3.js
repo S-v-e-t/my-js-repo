@@ -1,65 +1,55 @@
-// const country = 'Напишите название страны в которую нужно доставить товар';
-// let message = prompt(country);
-// const cancel = 'Отменено пользователем!';
-// const noDelivery = 'В вашей стране доставка не доступна';
-// if (message === null) {
-//   message = cancel;
-// } else {
-//   const countryName = message;
-//   switch (message) {
-//     case 'китай':
-//       const credite = 100;
-//       message = `Доставка в ${countryName} будет стоить ${credite} кредитов`;
-//       break;
-//     case 'южная америка':
-//       const credite1 = 250;
-//       message = `Доставка в ${countryName} будет стоить ${credite1} кредитов`;
-//       break;
-//     case 'австралия':
-//       const credite2 = 170;
-//       message = `Доставка в ${countryName} будет стоить ${credite2} кредитов`;
-//       break;
-//     case 'индия':
-//       const credite3 = 80;
-//       message = `Доставка в ${countryName} будет стоить ${credite3} кредитов`;
-//       break;
-//     case 'ямайка':
-//       const credite4 = 120;
-//       message = `Доставка в ${countryName} будет стоить ${credite4} кредитов`;
-//       break;
-//     default:
-//       message = noDelivery;
-//   }
-// }
-// alert(message);
+const country = 'Напишите название страны в которую нужно доставить товар';
 
-const message = prompt(
-  'Пожалуйста, укажите куда доставить товар: Китай, Южная Америка, Австралия, Индия, Ямайка',
-);
+let message = prompt(country);
+
+const cancel = 'Отменено пользователем!';
+let credite = 100;
+const noDelivery = 'В вашей стране доставка не доступна';
 
 if (message === null) {
-  alert('Отменено пользователем');
+  message = cancel;
 } else {
-  const messageUser = message.toLowerCase();
+  const countryName = message[0].toUpperCase() + message.slice(1).toLowerCase();
 
-  switch (messageUser) {
-    case 'китай':
-      alert('Доставка в Китай будет стоить 100 кредитов');
+  switch (countryName) {
+    case 'Китай':
+      credite = 100;
+
+      message = `Доставка в ${countryName} будет стоить ${credite} кредитов`;
+
       break;
-    case 'южная америка':
-      alert('Доставка в Южную Америку будет стоить 250 кредитов');
+
+    case 'Южная америка':
+      credite = 250;
+
+      message = `Доставка в ${countryName} будет стоить ${credite} кредитов`;
+
       break;
-    case 'австралия':
-      alert('Доставка в Австралию будет стоить 170 кредитов');
+
+    case 'Австралия':
+      credite = 170;
+
+      message = `Доставка в ${countryName} будет стоить ${credite} кредитов`;
+
       break;
-    case 'индия':
-      alert('Доставка в Индию будет стоить 80 кредитов');
+
+    case 'Индия':
+      credite = 80;
+
+      message = `Доставка в ${countryName} будет стоить ${credite} кредитов`;
+
       break;
-    case 'ямайка':
-      alert('Доставка на Ямайку будет стоить 120 кредитов');
+
+    case 'Ямайка':
+      credite = 120;
+
+      message = `Доставка в ${countryName} будет стоить ${credite} кредитов`;
+
       break;
 
     default:
-      alert('В вашей стране доставка не доступна!');
+      message = noDelivery;
   }
 }
+
+alert(message);
