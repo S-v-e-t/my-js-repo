@@ -1,14 +1,15 @@
-let message = prompt(
+const message = prompt(
   'Пожалуйста, укажите куда доставить товар: Китай, Южная Америка, Австралия, Индия, Ямайка',
 );
 
 
 
-if (message === null) {alert(`Отменено пользователем`);}
-else { let messageUser = message.toLowerCase()
+if (message === null) { alert('Отменено пользователем'); }
+else {
+ const messageUser = message.toLowerCase();
 
 
-switch (messageUser) {
+  switch (messageUser) {
     case 'китай':
       alert('Доставка в Китай будет стоить 100 кредитов');
       break;
@@ -25,7 +26,7 @@ switch (messageUser) {
       alert('Доставка на Ямайку будет стоить 120 кредитов');
       break;
 
-      default:
-          alert(`В вашей стране доставка не доступна!`);
+    default:
+      alert('В вашей стране доставка не доступна!');
   }
 }

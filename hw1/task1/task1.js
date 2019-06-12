@@ -5,6 +5,8 @@ if (message === ADMIN_PASSWORD) {
   alert('Добро пожаловать!');
 } else if (message === null) {
   alert('Была нажата отмена');
-} else if (message !== ADMIN_PASSWORD) {
+} else {
+  message !== ADMIN_PASSWORD;
+
   alert('Доступ запрещен, неверный пароль!');
 }

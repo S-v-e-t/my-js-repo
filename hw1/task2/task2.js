@@ -8,6 +8,10 @@ const balance = credits - totalPrice;
 
 if (order === null) {
   alert('Отменено пользователем');
+} else if (order <= 0) {
+  alert('Некорректное число дроидов!');
+} else if (Number.isNaN(+order)) {
+  alert('Это не похоже на число. Введите корректное число дроидов!');
 } else if (totalPrice > credits) {
   alert('Недостаточно средств на счету!');
 } else {
