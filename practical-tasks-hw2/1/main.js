@@ -26,7 +26,7 @@ console.log(users); //  ["Lux", "Poly", "Ajax", "Jay", "Kiwi"]
 
 // Удалить из массива элемент хранящийся в переменной userToDelete
 // const userToDelete = 'Ajax';
-const userToDelete = users.splice(2, 1); // 1-способ
+users.splice(2, 1); // 1-способ
 
 console.log(users); //  ["Lux", "Poly", "Jay", "Kiwi"]
 
@@ -36,6 +36,3 @@ users.splice(2, 0, 'Kong'); // 1-способ
 
 
 console.log(users); //  ["Lux", "Poly", "Kong", "Jay", "Kiwi"]
-
-
-// как сделать два последних задания, обращаясь к переменной а не индексу?
