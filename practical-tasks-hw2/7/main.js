@@ -28,11 +28,11 @@ const cancel = null;
 
 let message;
 
-if (userInput === cancel) { message = 'Отмена'; } else if (numbers.includes(value)) {
-  message = 'Поздравляем, Вы угадали!';
-} else {
+if (userInput === cancel) { message = 'Отмена'; } else if (numbers.includes(value))
+{ message = 'Поздравляем, Вы угадали!'; }
+else {
   message = 'Сожалеем, Вы не угадали!';
 }
 alert(message);
 
-// при чём тут x и y ? Это и есть min и max или надо еще где-то приравнять x и y с min и max?
+
