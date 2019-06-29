@@ -157,29 +157,29 @@ notepad.saveNote({
   priority: Priority.LOW,
 });
 
-// console.log('Все текущие заметки: ', notepad.getNotes());
+console.log('Все текущие заметки: ', notepad.getNotes());
 
 // /*
 //  * Зима уже близко, пора поднять приоритет на покупку одежды
 //  */
-// notepad.updateNotePriority('id-4', Priority.NORMAL);
+notepad.updateNotePriority('id-4', Priority.NORMAL);
 
-// console.log('Заметки после обновления приоритета для id-4: ', notepad.getNotes());
+console.log('Заметки после обновления приоритета для id-4: ', notepad.getNotes());
 
 // // /*
 // //  * Решил что фреймворки отложу немного, понижаю приоритет
 // //  */
-// notepad.updateNotePriority('id-3', Priority.LOW);
+notepad.updateNotePriority('id-3', Priority.LOW);
 
-// console.log('Заметки после обновления приоритета для id-3: ', notepad.getNotes());
+console.log('Заметки после обновления приоритета для id-3: ', notepad.getNotes());
 
 // /*
 //  * Решил отфильтровать заметки по слову html
 //  */
-// console.log(
-//   'Отфильтровали заметки по ключевому слову "html": ',
-//   notepad.filterNotesByQuery('html'),
-// );
+console.log(
+  'Отфильтровали заметки по ключевому слову "html": ',
+  notepad.filterNotesByQuery('html'),
+);
 
 // /*
 //  * Решил отфильтровать заметки по слову javascript
@@ -192,22 +192,22 @@ console.log(
 // /*
 //  * Хочу посмотреть только заметки с нормальным приоритетом
 //  */
-// console.log(
-//   'Отфильтровали заметки по нормальному приоритету: ',
-//   notepad.filterNotesByPriority(Priority.NORMAL),
-// );
+console.log(
+  'Отфильтровали заметки по нормальному приоритету: ',
+  notepad.filterNotesByPriority(Priority.NORMAL),
+);
 
 // /*
 //  * Обновим контент заметки с id-3
 //  */
-// notepad.updateNoteContent('id-3', {
-//   title: 'Get comfy with React.js or Vue.js',
-// });
+notepad.updateNoteContent('id-3', {
+  title: 'Get comfy with React.js or Vue.js',
+});
 
-// console.log('Заметки после обновления контента заметки с id-3: ', notepad.getNotes());
+console.log('Заметки после обновления контента заметки с id-3: ', notepad.getNotes());
 
 // /*
 //  * Повторил HTML и CSS, удаляю запись c id-2
 //  */
-// notepad.deleteNote('id-2');
-// console.log('Заметки после удаления с id -2: ', notepad.getNotes());
+notepad.deleteNote('id-2');
+console.log('Заметки после удаления с id -2: ', notepad.getNotes());
