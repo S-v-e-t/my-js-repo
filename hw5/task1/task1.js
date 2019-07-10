@@ -10,16 +10,16 @@ const Notepad = function (notes = []) {
     return this.notes;
   };
 
-  this.findNoteById = function (id) {
+  Notepad.prototype.findNoteById = function (id) {
     return this.notes.find(e => e.id === id);
   };
 
-  this.saveNote = function (note) {
+  Notepad.prototype.saveNote = function (note) {
     this.notes.push(note);
     return this;
   };
 
-  this.deleteNote = function (id) {
+  Notepad.prototype.deleteNote = function (id) {
     // this.notes = this.note.filter(e => e.id !== id);
     for (let i = 0; i < this.notes.length; i += 1) {
       if (this.notes[i].id === id) {
@@ -29,15 +29,15 @@ const Notepad = function (notes = []) {
     }
   };
 
-  this.updateNoteContent = function (id, updatedContent) {
+  Notepad.prototype.updateNoteContent = function (id, updatedContent) {
     Object.assign(this.findNoteById(id), updatedContent);
   };
 
-  this.updateNotePriority = function (id, priority) {
+  Notepad.prototype.updateNotePriority = function (id, priority) {
     this.findNoteById(id).priority = priority;
   };
 
-  this.filterNotesByQuery = function (query) {
+  Notepad.prototype.filterNotesByQuery = function (query) {
     const newArr = [];
     for (const obj of this.notes) {
       const titleLower = obj.title.toLowerCase();
@@ -49,7 +49,7 @@ const Notepad = function (notes = []) {
     return newArr;
   };
 
-  this.filterNotesByPriority = function (priority) {
+  Notepad.prototype.filterNotesByPriority = function (priority) {
     return this.notes.filter(e => e.priority === priority);
   };
 };
