@@ -50,19 +50,19 @@ class Notepad {
     return this._notes.filter(e => e.priority === priority);
   }
 
-  // static Priority = {         свойство не поддерживается редактором, но в хроме всё ок
-  //   LOW: 0,
-  //   NORMAL: 1,
-  //   HIGH: 2,
-  // }
-
-  static get Priority() {
-    return {
-      LOW: 0,
-      NORMAL: 1,
-      HIGH: 2,
-    };
+  static Priority = {         //свойство не поддерживается редактором, но в хроме всё ок
+    LOW: 0,
+    NORMAL: 1,
+    HIGH: 2,
   }
+
+  // static get Priority() {           свойство показывает ошибку в хроме, но с ним можно посмотреть терминал в редакторе
+  //   return {
+  //     LOW: 0,
+  //     NORMAL: 1,
+  //     HIGH: 2,
+  //   };
+  // }
 
   /*
    * Перенеси свойства и методы конструктора в класс
