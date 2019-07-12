@@ -18,18 +18,12 @@ class Notepad {
   }
 
   saveNote(note) {
-    this._notes.push(note);
-    return this;
+    const length = this._notes.push(note);
+    return this._notes[length - 1];
   }
 
   deleteNote(id) {
-    // this._notes = this.note.filter(e => e.id !== id);
-    for (let i = 0; i < this._notes.length; i += 1) {
-      if (this._notes[i].id === id) {
-        this._notes.splice(i, 1);
-        break;
-      }
-    }
+    this.notes.splice(this.notes.findIndex(elem => elem.id === id), 1);
   }
 
   updateNoteContent(id, updatedContent) {
@@ -56,11 +50,20 @@ class Notepad {
     return this._notes.filter(e => e.priority === priority);
   }
 
-  static Priority = {
-    LOW: 0,
-    NORMAL: 1,
-    HIGH: 2,
+  // static Priority = {         свойство не поддерживается редактором, но в хроме всё ок
+  //   LOW: 0,
+  //   NORMAL: 1,
+  //   HIGH: 2,
+  // }
+
+  static get Priority() {
+    return {
+      LOW: 0,
+      NORMAL: 1,
+      HIGH: 2,
+    };
   }
+
   /*
    * Перенеси свойства и методы конструктора в класс
    *
@@ -164,10 +167,7 @@ notepad.updateNoteContent('id-3', {
   title: 'Get comfy with React.js or Vue.js',
 });
 
-console.log(
-  'Заметки после обновления контента заметки с id-3: ',
-  notepad.notes,
-);
+console.log('Заметки после обновления контента заметки с id-3: ', notepad.notes);
 
 /*
  * Повторил HTML и CSS, удаляю запись c id-2
