@@ -13,9 +13,9 @@ function Account(login, password, type = 'regular') {
 
   this.getInfo = function () {
     console.log(`
-      Login: ${login}, 
-      Pass: ${password}, 
-      Type: ${type}
+      Login: ${this.login}, 
+      Pass: ${this.password}, 
+      Type: ${this.type}
     `);
   };
 }

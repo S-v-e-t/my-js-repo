@@ -17,10 +17,15 @@ class Notepad {
     return this._notes.find(e => e.id === id);
   }
 
-  saveNote(note) {
-    const length = this._notes.push(note);
-    return this._notes[length - 1];
-  }
+  // saveNote(note) {
+  //   const length = this._notes.push(note);
+  //   return this._notes[length - 1];                 верни последний элемент
+  // }
+
+  saveNote(note) { 
+this._notes.push(note);
+return note;
+} 
 
   deleteNote(id) {
     this.notes.splice(this.notes.findIndex(elem => elem.id === id), 1);
