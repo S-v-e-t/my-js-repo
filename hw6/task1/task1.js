@@ -4,6 +4,7 @@
 
 // За основу возьми домашнее задание из модуля №5, но теперь необходимо написать ES6 класс.
 
+
 class Notepad {
   constructor(notes) {
     this._notes = notes;
