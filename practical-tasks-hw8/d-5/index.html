@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>d-5</title>
+    <style>
+      .wrapper {
+        width: 90%;
+        min-width: 320px;
+        max-width: 960px;
+        margin: auto;
+        padding: 1rem;
+        box-shadow: 2px 2px 2px 2px hsla(0, 0%, 0%, 0.2);
+      }
+      .task,
+      .result-wrp {
+        min-height: 10rem;
+        margin: 1rem;
+        padding: 1rem;
+        box-shadow: 2px 2px 2px 2px hsla(0, 0%, 0%, 0.2);
+        font-family: sans-serif;
+        font-size: 18px;
+        border-radius: 0.5rem;
+      }
+      .result-wrp {
+        background-color: #333;
+        color: #eee;
+      }
+      .task {
+        color: #333;
+        background-color: #eee;
+      }
+    </style>
+     <link rel="stylesheet" href="../pagination.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <pre class="task">
+  Есть список с классом .size-filter из произвольного
+  количества чекбоксов, каждый из которых содержит
+  размер одежды в фильтре.
+
+  Напишите функцию collectInputData(inputs), которая
+  принимает 1 параметр inputs - массив тех инпутов
+  у которых состояние checked.
+
+  Возвращает массив значений атрибута value.
+          </pre
+      >
+      <ul class="size-filter">
+          <li>
+            <label>
+              <input type="checkbox" name="size" value="xs">
+              Extra Small
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="size" value="s" checked>
+              Small
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="size" value="m">
+              Medium
+            </label>
+          </li>
+          <li>
+            <label>
+                <input type="checkbox" name="size" value="l" checked>
+             Large
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="size" value="xl" checked>
+              Extra Large
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="size" value="xxl">
+              Extra Extra Large
+            </label>
+          </li>
+        </ul>
+      <div class="result-wrp">
+        <pre class="result"></pre>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+    <script src="../pagination.js"></script>
+  </body>
+</html>

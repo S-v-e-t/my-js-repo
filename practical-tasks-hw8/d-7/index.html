@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>d-7</title>
+    <style>
+      .wrapper {
+        width: 90%;
+        min-width: 320px;
+        max-width: 960px;
+        margin: auto;
+        padding: 1rem;
+        box-shadow: 2px 2px 2px 2px hsla(0, 0%, 0%, 0.2);
+      }
+      .task,
+      .result-wrp {
+        min-height: 10rem;
+        margin: 1rem;
+        padding: 1rem;
+        box-shadow: 2px 2px 2px 2px hsla(0, 0%, 0%, 0.2);
+        font-family: sans-serif;
+        font-size: 18px;
+        border-radius: 0.5rem;
+      }
+      .result-wrp {
+        background-color: #333;
+        color: #eee;
+      }
+      .task {
+        color: #333;
+        background-color: #eee;
+      }
+    </style>
+     <link rel="stylesheet" href="../pagination.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <pre class="task">
+В HTML-документе уже есть тег с id="root" (вкладка HTML)
+
+Создайте функцию createBoxes(num), 
+  которая принимает 1 параметр num - число.
+
+  Функция создает столько div, сколько указано в num
+  и возвращает их в одном общем контейнере.
+  После чего необходимо повесить результат работы функции
+  в div с id="#root"
+
+Каждый div:
+  - Имеет случайный rgb цвет фона
+  - Размеры самого первого div - 30px на 30px.
+  - Каждый следующий div после первого,
+    должен быть шире и выше предыдущего на 10px
+          </pre
+      >
+      <div class="result-wrp">
+        <div id="root"></div>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+    <script src="../pagination.js"></script>
+  </body>
+</html>
