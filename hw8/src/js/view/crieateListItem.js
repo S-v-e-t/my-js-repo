@@ -14,7 +14,7 @@ function createElem(tag, className, text = null, id = null) {
   const element = document.createElement(tag);
   className.split(' ').map(e => element.classList.add(e));
   if (id) {
-    element.setAttribute('data-id', id);
+    element.dataset.id = id;
   }
   if (text) {
     element.textContent = text;
