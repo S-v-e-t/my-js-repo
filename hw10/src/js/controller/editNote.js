@@ -1,4 +1,5 @@
 import { notepad } from "../app";
+import refreshPriority from "../view/refreshPriority";
 
 function editNote(event) {
   event.preventDefault();
@@ -26,7 +27,7 @@ function editNote(event) {
       target.style.borderRadius = "50%";
       note.title = title.textContent;
       note.body = body.textContent;
-    } else {
+          } else {
       title.setAttribute("contenteditable", false);
       body.setAttribute("contenteditable", false);
       title.style.backgroundColor = "#fff";
@@ -35,7 +36,9 @@ function editNote(event) {
       body.style.color = "#7c7879";
       target.style.backgroundColor = "#7c7879";
       target.style.borderRadius = "50%";
-    }
+      note.title = title.textContent;
+      note.body = body.textContent;
+          }
   }
 }
 export default editNote;
