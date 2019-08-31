@@ -25,6 +25,7 @@ module.exports = env => ({
     clientLogLevel: 'warning',
     compress: true,
     open: true,
-    port: env.port
+    port: env.port,
+    host: '127.0.0.1',
   }
 });
