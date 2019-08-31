@@ -20,7 +20,7 @@ class Notepad {
       note.priority = PRIORITY_TYPES.LOW;
       this._notes.push(note);
     }
-        return note;
+    return note;
   }
 
   deleteNote(id) {
@@ -47,25 +47,25 @@ class Notepad {
     return newArr;
   }
 
-  
+
   filterNotesByPriority(priority) {
     return this._notes.filter(e => e.priority === priority);
   }
 
   // static Priority = {
-    
+
   //   LOW: 0,
   //   NORMAL: 1,
   //   HIGH: 2,
   // };
 
-  static get Priority() {
-    return {
-        LOW: 0,
-        NORMAL: 1,
-        HIGH: 2
-      };
-  }
+  // static get Priority() {
+  //   return {
+  //       LOW: 0,
+  //       NORMAL: 1,
+  //       HIGH: 2
+  //     };
+  // }
 
 }
 

@@ -4,16 +4,17 @@ import refreshPriority from "../view/refreshPriority";
 function editNote(event) {
   event.preventDefault();
   const { target } = event;
+  const li = target.closest(".note-list__item");
+  const { id } = li.dataset;
+  const note = notepad.findNoteById(id);
+  const title = li.querySelector(".note__title");
+  const body = li.querySelector(".note__body");
+  
   if (
     target.dataset.action === "edit-note" ||
     target.parentNode.dataset.action === "edit-note"
   ) {
-    const li = target.closest(".note-list__item");
-    const { id } = li.dataset;
-    const note = notepad.findNoteById(id);
-    const title = li.querySelector(".note__title");
-    const body = li.querySelector(".note__body");
-
+   
     li.classList.toggle("active");
 
     if (li.classList.contains("active")) {
@@ -38,7 +39,7 @@ function editNote(event) {
       target.style.borderRadius = "50%";
       note.title = title.textContent;
       note.body = body.textContent;
-          }
+             }
   }
 }
 export default editNote;
