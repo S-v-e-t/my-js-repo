@@ -3,6 +3,8 @@ import { refreshList } from './mvc/view';
 
 // import { openEditor } from './utils/libraries';
 import './mvc/controller';
-
+// import './localstorage';
 refreshList();
+
+
 // openEditor();
