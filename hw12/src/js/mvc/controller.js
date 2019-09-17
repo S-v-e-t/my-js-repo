@@ -60,9 +60,10 @@ function saveData(e) {
     notificationAdded();
   }
   if (state.note) {
+    const { id } = state.note;
     state.note.title = title;
     state.note.body = body;
-    notificationSave();
+    notepad.updateNoteContent(id, { title, body }).then(notificationSave);
   }
   state.note = null;
   reset();

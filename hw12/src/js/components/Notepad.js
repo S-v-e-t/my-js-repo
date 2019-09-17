@@ -31,7 +31,6 @@ class Notepad {
     });
   }
 
-
   deleteNote(id) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -43,9 +42,15 @@ class Notepad {
   }
 
   updateNoteContent(id, updatedContent) {
-    Object.assign(this.findNoteById(id), updatedContent);
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const note = Object.assign(this.findNoteById(id), updatedContent);
+        storage.save('key-note', this._notes);
+        refreshList();
+        resolve(note);
+      }, 200);
+    });
   }
-
 
   updateNotePriority(id, priority) {
     this.findNoteById(id).priority = priority;
