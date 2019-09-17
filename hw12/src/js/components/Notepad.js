@@ -2,8 +2,10 @@
 /* eslint-disable no-underscore-dangle */
 // import { __values } from 'tslib';
 // import { PRIORITY_TYPES } from '../utils/constants';
-import Storage from '../localstorage';
+import storage from '../storage';
 import { notepad } from '../mvc/model';
+import { refreshList } from '../mvc/view';
+
 
 class Notepad {
   constructor(notes) {
@@ -19,24 +21,31 @@ class Notepad {
   }
 
   saveNote(note) {
-    if (note.priority) {
-      this._notes.push(note);
-      Storage.save('Notes', notepad.notes);
-    } else {
-      note.priority = 0;
-      this._notes.push(note);
-      Storage.save('Notes', notepad.notes);
-    }
-    return note;
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        this._notes.push(note);
+        storage.save('key-note', this._notes);
+        refreshList();
+        resolve(note);
+      }, 200);
+    });
   }
 
+
   deleteNote(id) {
-    this.notes.splice(this.notes.findIndex(elem => elem.id === id), 1);
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        this._notes = this._notes.filter(el => el.id !== id);
+        storage.save('key-note', this._notes);
+        resolve(this._notes);
+      }, 500);
+    });
   }
 
   updateNoteContent(id, updatedContent) {
     Object.assign(this.findNoteById(id), updatedContent);
   }
+
 
   updateNotePriority(id, priority) {
     this.findNoteById(id).priority = priority;
@@ -62,55 +71,3 @@ class Notepad {
 export default Notepad;
 
 
-// const notes = {
-//   array: ['one', 'two'],
-//   getAsyncArray() {
-//     return new Promise((resolve, reject) => {
-//       setTimeout(() => {
-//         resolve(this.array);
-//       }, 100);
-//     });
-//   },
-//   getArray() {
-//     return this.array;
-//   },
-//   add(elem) {
-//     //  синхронно
-//     //  this.array.push(elem)
-//     //  return elem;
-
-//     // асинхронно
-//     // setTimeout(() => this.array.push(elem), 500);
-//     // return elem; // проблема асинхронности - возврат результата
-
-//     return new Promise((resolve, reject) => {
-//       setTimeout(() => {
-//         this.array.push(elem);
-//         resolve(elem);
-//       }, 500);
-//     });
-//   },
-//   delete(etem) {
-//     // this.array = this.array.filter(e => etem !== e);
-//     return new Promise((resolve, reject) => {
-//       setTimeout(() => {
-//         this.array = this.array.filter(e => etem !== e);
-//         resolve(this.array);
-//       }, 800);
-//     });
-//   },
-// };
-
-// notes
-//   .add('three')
-//   .then(elem => console.log(elem))
-//   .then(data => console.log(notes.getArray()))
-//   .catch(err => console.log(err));
-// notes
-//   .getAsyncArray()
-//   .then(data => console.log(data))
-//   .catch(err => console.log(err));
-// notes
-//   .delete('one')
-//   .then(data => console.log(notes.getArray()))
-//   .catch(err => console.log(err));

@@ -67,7 +67,6 @@ function saveData(e) {
   state.note = null;
   reset();
   closeEditor();
-  refreshList(notepad.notes);
 }
 
 function deleteData({ target }) {
